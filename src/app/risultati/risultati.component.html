@@ -1,0 +1,58 @@
+<div class="container">
+    <h1 class="text-center">{{tipo}}</h1>
+    <table class="table shadow bg-black text-white align-middle mb-0">
+        <thead class=" sticky-top ">
+            <tr>
+                <th *ngIf='yearsCode == "" '>Codice</th>
+                <th *ngIf='yearsCode == "" '>Nome</th>
+                <th *ngIf='yearsCode == "" '>Link</th>
+
+                <th *ngIf='yearsCode != "" '>Anno</th>
+                <th *ngIf='yearsCode != "" '>Marca</th>
+                <th *ngIf='yearsCode != "" '>Modello</th>
+                <th *ngIf='yearsCode != "" '>Prezzo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <div *ngFor="let item of items" class="border border-secondary">
+                        <div class="ms-3" style="height: 42px;">
+                            <p *ngIf='yearsCode == "" ' class="fw-bold m-1">{{item.codigo}}</p>
+                            <p *ngIf='yearsCode != "" ' class="fw-bold m-1">{{item.AnoModelo}}</p>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <div *ngFor="let item of items" class="border border-secondary">
+                        <div class="ms-3" style="height: 42px;">
+                            <p *ngIf='yearsCode == "" ' class="fw-bold m-1">{{item.nome}}</p>
+                            <p *ngIf='yearsCode != "" ' class="fw-bold m-1">{{item.Marca}}</p>
+                        </div>
+                    </div>
+                </td>
+
+                <td>
+                    <div *ngFor="let item of items" class="border border-secondary">
+                        <div *ngIf='yearsCode == "" ' class="ms-3 p-1">
+                            <button (click)="fetch(item.codigo)" class="btn btn-primary">VAI</button>
+                        </div>
+
+                        <div *ngIf='yearsCode != "" ' class="ms-3" style="height: 42px;">
+                            <p class="fw-bold m-1">{{item.Modelo}}</p>
+                        </div>
+                    </div>
+                </td>
+
+                <td *ngIf='yearsCode != "" '>
+                    <div *ngFor="let item of items" class="border border-secondary" style="height: 48px;">
+                        <div class="ms-3">
+                            <p class="fw-bold m-1">{{item.Valor}}</p>
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

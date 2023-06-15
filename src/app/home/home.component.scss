@@ -1,0 +1,23 @@
+.centra {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.focus:hover {
+    transform: scale(1.1);
+    transition: 0.2s;
+}
+
+.focus {
+    transition: 0.2s;
+}
+
+.bg-image {
+    height: 100vh;
+    background-image: url("../../assets/concessionario.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
